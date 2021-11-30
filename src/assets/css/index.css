@@ -1,0 +1,174 @@
+@import url('./public.css');
+.myBox{
+  background-image: url(../images/x.jpeg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  padding-top: 60px;
+  height: 100vh;
+}
+.todoapp {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, .7);
+}
+
+/* part1 */
+.header>h1 {
+  margin-bottom: 20px;
+}
+
+.todoInput>input {
+  width: 100%;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid gray;
+  font-size: 20px;
+  padding: 15px 20px 15px 50px;
+  background-color: transparent;
+}
+
+/* part2 */
+.main {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.main>input.toggle-all {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: 10px;
+  top: -25px;
+}
+
+.main>label {
+  width: 50px;
+  height: 34px;
+  font-size: 0;
+  position: absolute;
+  /* top: -52px; */
+  top: -45px;
+  left: -8px;
+  transform: rotate(90deg);
+}
+
+.main>label::after {
+  /* display: inline-block; */
+  position: absolute;
+  content: " ";
+  height: 10px;
+  width: 10px;
+  border-width: 2px 2px 0 0;
+  /* border-color: black; */
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  top: 25%;
+  left: 15px;
+}
+
+ul.todo-list li {
+  position: relative;
+}
+
+
+
+ul.todo-list li div.view{
+  padding: 15px 50px;
+  display: flex;
+  border-bottom: 2px solid gray;
+}
+ul.todo-list li div.view label {
+  text-align: left;
+  width: 100%;
+  font-size: 20px;
+  height: 23.2px;
+}
+ul.todo-list li.completed div.view label {
+  text-decoration: line-through;
+}
+
+
+ul.todo-list li div.view input{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ul.todo-list li.editing div.view input{
+  display: none;
+}
+
+ul.todo-list li div.view button.destroy{
+  border: 0;
+}
+ul.todo-list li:hover .view button.destroy::after{
+  display: block;
+}
+ul.todo-list li div.view button.destroy::after {
+  position: absolute;
+  content: 'X';
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+ul.todo-list li div.ed-box{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50px;
+  right: 50px;
+  padding: 3px 0 5px;
+  display: none;
+}
+ul.todo-list li.editing div.ed-box{
+  display: block;
+}
+ul.todo-list li input.edit{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 0;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+
+
+/* part3 */
+.footer {
+  display: flex;
+  padding: 5px 0;
+  font-size: 18px;
+}
+.footer .todo-count{
+  width: 33.33%;
+}
+
+.footer .filter {
+  display: flex;
+  width: 33.33%;
+}
+
+.footer .filter li {
+  margin: 0 10px;
+}
+
+.footer button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  font-size: 18px;
+  outline: none;
+  width: 33.33%;
+}
